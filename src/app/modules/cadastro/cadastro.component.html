@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre</title>
+
+</head>
+<body class="center-form">
+    <div class="container">   
+        <form [formGroup]="formGroup" class="mb-4">                
+            <h1> Registro do Atendimento: </h1>
+            <br>    
+            <div [formGroup]="formGroup">
+            <label> Nome do cliente: </label>
+            <input type="text" class="form-control" placeholder="Insira o nome do cliente" formControlName="nomeCliente" name="nomeCliente">
+            <br>    
+            </div>
+
+            <div [formGroup]="formGroup">
+                <label> Apelido do cliente: </label>
+                <input type="text" formControlName="apelidoCliente"  class="form-control" placeholder="Insira o apelido" name="apelidoCliente"> 
+                <br>  
+            </div>
+
+            <div [formGroup]="formGroup">
+                <label> Data do atendimento:</label><br>
+                <input type="date" value="dataAtendimento" formControlName="dataAtendimento" name="dataAtendimento">  
+                <br>
+                <br>
+            </div>
+        
+            <div [formGroup]="formGroup">
+                <label>Horário:</label><br>
+                <input type="time" value="horarioAtendimento" formControlName="horarioAtendimento" name="horarioAtendimento">
+                <br>
+                <br> 
+            </div>
+        
+            <div [formGroup]="formGroup">
+                <label>Nome do funcionário:</label>
+                <input type="text" class="form-control" aria-describedby="funcionario" 
+                placeholder="Insira o nome do funcionário que realizará o atendimento" formControlName="nomeFuncionario" name="nomeFuncionario">
+                <br>   
+            </div>
+
+            <div [formGroup]="formGroup">
+                <label>Serviço ofertado:</label>
+                <input type="text" class="form-control" aria-describedby="nomeServico"  placeholder="Descrição do procedimento"  formControlName="nomeServico" name="nomeServico" >
+                <br>   
+            </div> 
+
+            <div [formGroup]="formGroup">
+                <label>Valor do serviço:</label>
+                <input type="text" class="form-control" aria-describedby="preco" placeholder="Preço em R$" formControlName="valorServico" name="valorServico">
+                <br>   
+            </div> 
+            <button type="button" style="margin: 4px; width: 1100px; height: 40px; padding-bottom: 10px; float: right;" class="btn btn-primary"  (click)="salvarAtendimento()">Cadastrar</button>    
+        </form>        
+    </div>
+
+    <router-outlet></router-outlet>
+
+</body>
+</html>
